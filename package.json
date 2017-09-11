@@ -1,0 +1,22 @@
+{
+  "name": "my-awesome-typescript-project",
+  "version": "0.1.0",
+  "description": "it does a thing, probably",
+  "author": "just nobody",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --inline --hot --progress --open",
+    "build": "webpack -p"
+  },
+  "dependencies": {
+    "pixi.js": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/pixi.js": "^4.5.3",
+    "html-webpack-plugin": "^2.30.1",
+    "ts-loader": "^2.3.7",
+    "typescript": "^2.5.2",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
