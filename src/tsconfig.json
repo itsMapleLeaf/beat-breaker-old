@@ -5,6 +5,5 @@
     "lib": ["dom", "esnext"],
     "strict": true,
     "noUnusedLocals": true
-  },
-  "include": ["./src/**/*"]
+  }
 }
