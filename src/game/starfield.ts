@@ -1,7 +1,6 @@
 import * as pixi from 'pixi.js'
 import { randomBetween } from '../util/math'
-
-const WHITE = 0xffffff
+import { White } from './colors'
 
 export class Starfield {
   container = new pixi.Container()
@@ -27,7 +26,7 @@ export class Starfield {
     const star = new pixi.Graphics()
     const size = randomBetween(2, 12)
 
-    star.beginFill(WHITE)
+    star.beginFill(White.rgbNumber())
     star.drawRect(0, 0, size, size)
     star.endFill()
 

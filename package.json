@@ -9,9 +9,11 @@
     "build": "webpack --config webpack/webpack.config.ts -p"
   },
   "dependencies": {
+    "color": "^2.0.0",
     "pixi.js": "^4.5.5"
   },
   "devDependencies": {
+    "@types/color": "^2.0.0",
     "@types/pixi.js": "^4.5.3",
     "@types/webpack": "^3.0.10",
     "@types/webpack-env": "^1.13.1",
