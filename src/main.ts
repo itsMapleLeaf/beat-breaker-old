@@ -1,3 +1,5 @@
 import { Game } from './game/game'
+import { Gameplay } from './game/gameplay'
 
-new Game()
+const game = new Game()
+game.setState(new Gameplay())
