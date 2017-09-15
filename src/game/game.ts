@@ -3,7 +3,7 @@ import { query } from '../util/dom'
 import { Black } from './colors'
 import { viewHeight, viewWidth } from './constants'
 
-// type InteractionEvent = pixi.interaction.InteractionEvent
+export type InteractionEvent = pixi.interaction.InteractionEvent
 
 export class Game {
   private view = query('#view') as HTMLCanvasElement
@@ -15,7 +15,7 @@ export class Game {
     transparent: true,
   })
 
-  // private interaction = new pixi.interaction.InteractionManager(this.app.renderer)
+  private interaction = new pixi.interaction.InteractionManager(this.app.renderer)
 
   private state = new GameState(this)
 
@@ -26,6 +26,15 @@ export class Game {
 
     this.app.ticker.add(dt => {
       this.state.update(dt / 60)
+    })
+
+    const events = ['pointerdown', 'pointerup', 'pointermove'] as Array<keyof GameState>
+
+    events.forEach(eventName => {
+      this.interaction.addListener(eventName, (event: InteractionEvent) => {
+        const handler = this.state[eventName] as (event: InteractionEvent) => void
+        handler(event)
+      })
     })
   }
 
@@ -42,4 +51,7 @@ export class GameState {
   enter(stage: pixi.Container) {}
   leave() {}
   update(dt: number) {}
+  pointerdown(event: InteractionEvent) {}
+  pointerup(event: InteractionEvent) {}
+  pointermove(event: InteractionEvent) {}
 }
