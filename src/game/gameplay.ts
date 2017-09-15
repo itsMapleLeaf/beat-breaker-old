@@ -1,8 +1,8 @@
 import * as pixi from 'pixi.js'
+import { viewHeight, viewWidth } from './constants'
 import { GameState } from './game'
-import { Starfield } from './starfield'
 import { Playfield } from './playfield'
-import { viewWidth, viewHeight } from './constants'
+import { Starfield } from './starfield'
 
 const playfieldWidth = 0.825
 

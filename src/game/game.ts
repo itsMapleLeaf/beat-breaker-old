@@ -1,7 +1,7 @@
 import * as pixi from 'pixi.js'
-import { Black } from './colors'
-import { viewWidth, viewHeight } from './constants'
 import { query } from '../util/dom'
+import { Black } from './colors'
+import { viewHeight, viewWidth } from './constants'
 
 // type InteractionEvent = pixi.interaction.InteractionEvent
 
