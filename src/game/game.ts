@@ -17,7 +17,7 @@ export class Game {
 
   // private interaction = new pixi.interaction.InteractionManager(this.app.renderer)
 
-  private state = new GameState()
+  private state = new GameState(this)
 
   constructor() {
     this.app.view.style.backgroundColor = Black.darken(0.25)
@@ -38,6 +38,7 @@ export class Game {
 }
 
 export class GameState {
+  constructor(protected game: Game) {}
   enter(stage: pixi.Container) {}
   leave() {}
   update(dt: number) {}
