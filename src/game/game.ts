@@ -2,6 +2,7 @@ import * as pixi from 'pixi.js'
 import { Starfield } from './starfield'
 import { Black } from './colors'
 import { Playfield } from './playfield'
+import { viewWidth, viewHeight } from './constants'
 
 type InteractionEvent = pixi.interaction.InteractionEvent
 
@@ -9,11 +10,18 @@ const playfieldWidth = 0.825
 
 export class Game {
   view = document.querySelector('#view') as HTMLCanvasElement
-  app = new pixi.Application({ width: 720, height: 1280, view: this.view, transparent: true })
+
+  app = new pixi.Application({
+    width: viewWidth,
+    height: viewHeight,
+    view: this.view,
+    transparent: true,
+  })
+
   interaction = new pixi.interaction.InteractionManager(this.app.renderer)
 
-  starfield = new Starfield(this.app.view.width, this.app.view.height)
-  playfield = new Playfield(this.app.view.width * playfieldWidth, this.app.view.height)
+  starfield = new Starfield(viewWidth, viewHeight)
+  playfield = new Playfield(viewWidth * playfieldWidth, viewHeight)
 
   constructor() {
     this.app.view.style.backgroundColor = Black.darken(0.25)
