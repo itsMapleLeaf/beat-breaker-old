@@ -3,13 +3,14 @@ import { Starfield } from './starfield'
 import { Black } from './colors'
 import { Playfield } from './playfield'
 import { viewWidth, viewHeight } from './constants'
+import { query } from '../util/dom'
 
 type InteractionEvent = pixi.interaction.InteractionEvent
 
 const playfieldWidth = 0.825
 
 export class Game {
-  view = document.querySelector('#view') as HTMLCanvasElement
+  view = query('#view') as HTMLCanvasElement
 
   app = new pixi.Application({
     width: viewWidth,
