@@ -1,6 +1,6 @@
+import * as HTMLPlugin from 'html-webpack-plugin'
 import * as path from 'path'
 import * as webpack from 'webpack'
-import * as HTMLPlugin from 'html-webpack-plugin'
 
 const root = path.resolve(__dirname, '..')
 
